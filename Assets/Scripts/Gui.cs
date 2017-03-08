@@ -6,13 +6,14 @@ using System;
 public class Gui : MonoBehaviour {
     public Text timeText;
     public Text scoreText;
+    public Text credits;
     public float time = 120;
     string[] highScores;
     int score;
 	// Use this for initialization
 	void Start () {
         highScores = new string[10];
-
+        setUpCredits();
 	}
 	
 	// Update is called once per frame
@@ -45,6 +46,9 @@ public class Gui : MonoBehaviour {
             forRet += s;
         }
         return forRet;
+    }
+    private void setUpCredits() {
+        credits.gameObject.transform.localPosition = new Vector3(.5f,.5f,2);
     }
     private void getHighScores()
     {

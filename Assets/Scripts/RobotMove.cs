@@ -12,8 +12,8 @@ public class RobotMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = gameObject.GetComponent<Rigidbody>();
-        
-	}
+        Time.timeScale = 1;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,9 +32,7 @@ public class RobotMove : MonoBehaviour {
     void keyBoarDrive() {
         if (Input.GetKey(KeyCode.R))
         {
-            Time.timeScale = 1;
             SceneManager.LoadScene(0);
-            
         }
         if (Input.GetKey(KeyCode.W)) {
             transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
